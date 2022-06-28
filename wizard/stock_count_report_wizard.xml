@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="stock_count_report_wizard_form" model="ir.ui.view">
+            <field name="name">stock.count.report.wizard.form</field>
+            <field name="model">stock.count.report.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Stock Count Report">
+                    <group>
+                        <group>
+                            <field name="start_date"/>
+                        </group>
+                        <group>
+                            <field name="end_date"/>
+                        </group>
+                    </group>
+                   
+                    <footer>
+                        <button string="Print" class="oe_highlight" type="object" name="print_report"/>
+                        <button string="Cancel" class="oe_highlight" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_stock_count_report_wizard" model="ir.actions.act_window">
+            <field name="name">Stock Count Report</field>
+            <field name="res_model">stock.count.report.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem action="action_stock_count_report_wizard" id="menu_stock_count_report_wizard" name="Stock Count Report" sequence="0" parent="stock.menu_stock_root" />
+
+    </data>
+</odoo>
